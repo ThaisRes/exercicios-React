@@ -1,6 +1,7 @@
 import Titulo from "../components/Titulo"; //ou use @ para sair da raiz do projeto: @/components/Titulo
 import Rodape from "../components/Footer";
 import CartaoPerfil from "@/components/CartaoPerfil";
+import Header from "@/components/Header";
 
 export default function Home() {
   const nome:string = "Ana";
@@ -10,12 +11,13 @@ export default function Home() {
 
   return (
   <>
-    <div className="bg-slate-800">
-      <h1>
-      Olá mundo!
-      </h1>
-      <h2>Olá, {nome}</h2>
+    <Header />
+    <main className="flex flex-col gap-3 py-6 items-center  bg-emerald-50 h-lvw">     
+
+      <h2 className="text-emerald-950">Olá, {nome}</h2>
+
       <Titulo />
+
       <div className="flex gap-3">
         {/* cards aqui */}
         <CartaoPerfil />
@@ -23,15 +25,18 @@ export default function Home() {
         <CartaoPerfil />
       </div>
       
-      <p>2 + 2 = {2+2}</p>  {/* Dentro de {"{ }"} vai JavaScript, não texto. */}
-      <p>{`${nome} tem ${idade} anos.`}</p>
-      <img src="OIP.jpg" alt="xx" />
-      <p>8 + 1 = {8+1}</p>
-      <div className="shadow-lg font-bold bg-amber-50 w-xl p-3 rounded-xl text-gray-800">
+      <p className="text-emerald-950">2 + 2 = {2+2}</p>  {/* Dentro de {"{ }"} vai JavaScript, não texto. */}
+      <p className="text-emerald-950">8 + 1 = {8+1}</p>
+      <p className="text-emerald-950">{`${nome} tem ${idade} anos.`}</p>
+      <div>
+        <img className="shadow-xl h-24 w-auto object-contain" src="OIP.jpg" alt="xx" />
+      </div>
+
+      <div className=" flex justify-center items-center shadow-lg font-bold bg-emerald-100 w-xl p-3 rounded-xl text-emerald-950">
         {`${nome2} - ${curso}`}
       </div>
-      <Rodape />
-    </div>    
+    </main>    
+    <Rodape />
   </>
   );
 }
