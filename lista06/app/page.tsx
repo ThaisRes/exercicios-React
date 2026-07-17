@@ -2,32 +2,75 @@ import Titulo from "../components/Titulo"; //ou use @ para sair da raiz do proje
 import Rodape from "../components/Footer";
 import CartaoPerfil from "@/components/CartaoPerfil";
 import Header from "@/components/Header";
+import Saudacao from "@/components/Saudacao";
+import Idade from "@/components/Idade";
+import Status from "@/components/Status";
+import Caixa from "@/components/Caixa";
+import Ola from "@/components/Ola";
+import Card from "@/components/Card";
+
+type Perfil = {
+  id: number;
+  emoji: string;
+  nome: string;
+  cargo: string;
+  idade: number;
+};
 
 export default function Home() {
   const nome:string = "Ana";
-  const idade:number = 20;
   const nome2:string = "Daniel Guimarães";
   const curso:string = "Técnico em Mecânica"
+
+  const perfil:Perfil[] = [
+    { id: 1, emoji: "😄", nome: "Ana", cargo: "RH", idade: 35 },
+    { id: 2, emoji: "👨‍💻", nome: "Carlos", cargo: "Desenvolvedor", idade: 28  },
+    { id: 3, emoji: "🎨", nome: "Julia", cargo: "Designer", idade: 52  }
+  ]
 
   return (
   <>
     <Header />
     <main className="flex flex-col gap-3 py-6 items-center  bg-emerald-50 h-lvw">     
 
-      <h2 className="text-emerald-950">Olá, {nome}</h2>
+      {/* <h2 className="text-emerald-950">Olá, {nome}</h2> */}
+      <Saudacao nome = {perfil[0]?.nome ?? ""}/>
+      <Ola />
+
+      <Status status = {true}/>
 
       <Titulo />
 
       <div className="flex gap-3">
         {/* cards aqui */}
-        <CartaoPerfil />
-        <CartaoPerfil />
-        <CartaoPerfil />
+        {perfil.map(p=> (
+          <CartaoPerfil key={p.id} emoji={p.emoji} nome={p.nome} cargo={p.cargo}/>
+        ))}
       </div>
+
       
       <p className="text-emerald-950">2 + 2 = {2+2}</p>  {/* Dentro de {"{ }"} vai JavaScript, não texto. */}
       <p className="text-emerald-950">8 + 1 = {8+1}</p>
-      <p className="text-emerald-950">{`${nome} tem ${idade} anos.`}</p>
+      {/* <p className="text-emerald-950">{`${nome} tem ${idade} anos.`}</p> */}
+
+      <Idade nome={perfil[1].nome} idade={perfil[1].idade} />
+
+      <Caixa>
+        <h3>Sou o conteúdo!</h3>
+      </Caixa>
+
+      <ul>
+        {perfil.map(p => <li key={p.id} >{p.nome}</li>)}
+      </ul>
+
+      <div className="flex gap-3">
+        {perfil.map(p => <Card key={p.id} nome={p.nome} />)}
+      </div>
+
+      <ol>
+        {perfil.map((n, i) => <li key={i}>{i+1}. {n.nome}</li>)}
+      </ol>
+
       <div>
         <img className="shadow-xl h-24 w-auto object-contain" src="OIP.jpg" alt="xx" />
       </div>
