@@ -4,7 +4,7 @@ type caixaProps = {
   
 export default function Caixa({children}:caixaProps){
     return(
-        <div>
+        <div className="text-emerald-950">
             {children}
         </div>
     )

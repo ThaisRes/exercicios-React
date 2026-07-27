@@ -31,7 +31,7 @@ export default function Home() {
   return (
   <>
     <Header />
-    <main className="flex flex-col gap-3 py-6 items-center  bg-emerald-50 h-lvw">     
+    <main className="flex flex-col gap-3 py-6 items-center bg-emerald-50 h-vw">     
 
       {/* <h2 className="text-emerald-950">Olá, {nome}</h2> */}
       <Saudacao nome = {perfil[0]?.nome ?? ""}/>
@@ -41,40 +41,47 @@ export default function Home() {
 
       <Titulo />
 
+      <h2 className="text-blue-700">Card -map</h2>
       <div className="flex gap-3">
         {/* cards aqui */}
         {perfil.map(p=> (
           <CartaoPerfil key={p.id} emoji={p.emoji} nome={p.nome} cargo={p.cargo}/>
         ))}
       </div>
-
       
+      <h2 className="text-blue-700">Contas</h2>
       <p className="text-emerald-950">2 + 2 = {2+2}</p>  {/* Dentro de {"{ }"} vai JavaScript, não texto. */}
       <p className="text-emerald-950">8 + 1 = {8+1}</p>
       {/* <p className="text-emerald-950">{`${nome} tem ${idade} anos.`}</p> */}
 
       <Idade nome={perfil[1].nome} idade={perfil[1].idade} />
-
+      
+      <h2 className="text-blue-700">Caixa</h2>
       <Caixa>
         <h3>Sou o conteúdo!</h3>
       </Caixa>
 
+      <h2 className="text-blue-700">Lista não ordenada com map</h2>
       <ul>
-        {perfil.map(p => <li key={p.id} >{p.nome}</li>)}
+        {perfil.map(p => <li key={p.id} className="text-emerald-600">{p.nome}</li>)}
       </ul>
-
+      
+      <h2 className="text-blue-700">Cards Vip</h2>
       <div className="flex gap-3">
         {perfil.map(p => <Card key={p.id} nome={p.nome} />)}
       </div>
-
+      
+      <h2 className="text-blue-700">Lista ordenada com map e índice</h2>
       <ol>
-        {perfil.map((n, i) => <li key={i}>{i+1}. {n.nome}</li>)}
+        {perfil.map((n, i) => <li key={i} className="text-emerald-600">{i+1}. {n.nome}</li>)}
       </ol>
-
+      
+      <h2 className="text-blue-700">Imagem</h2>
       <div>
         <img className="shadow-xl h-24 w-auto object-contain" src="OIP.jpg" alt="xx" />
       </div>
 
+      <h2 className="text-blue-700">Literals</h2>
       <div className=" flex justify-center items-center shadow-lg font-bold bg-emerald-100 w-xl p-3 rounded-xl text-emerald-950">
         {`${nome2} - ${curso}`}
       </div>

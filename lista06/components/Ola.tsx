@@ -3,5 +3,5 @@ type OlaProps = {
   };
 
 export default function Ola({nome = "visitante"}: OlaProps) {
-    return <p>Olá, {nome}</p>
+    return <p className="text-emerald-600">Olá, {nome}</p>
 }
