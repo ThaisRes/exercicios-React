@@ -1,13 +1,15 @@
-import Vip from "./Vip"
+import Vip, { vipProps } from "./Vip"
 
 type cardProps ={
-    nome:string
+    nome:string,
+    vip: boolean
 }
-export default function Card({nome}:cardProps){
+
+export default function Card({nome, vip}:cardProps){
     return (
-        <div className="p-3 rounded shadow-md bg-emerald-950 text-white">
+        <div className="flex flex-col flex-wrap justify-center items-center p-3 rounded shadow-md bg-emerald-950 text-white w-30">
             {nome}
-            <Vip vip/>
+            <Vip vip={vip}/>            
         </div>
     )
 }

@@ -8,6 +8,9 @@ import Status from "@/components/Status";
 import Caixa from "@/components/Caixa";
 import Ola from "@/components/Ola";
 import Card from "@/components/Card";
+import Produtos from "@/components/Produtos";
+import Badge from "@/components/Badge";
+import Lista from "@/components/Lista";
 
 type Perfil = {
   id: number;
@@ -15,18 +18,38 @@ type Perfil = {
   nome: string;
   cargo: string;
   idade: number;
+  vip: boolean;
+  ativo: boolean;
 };
+
+type Produtos = {
+  id:number;
+  nome:string;
+  preco: number;
+}
 
 export default function Home() {
   const nome:string = "Ana";
   const nome2:string = "Daniel Guimarães";
-  const curso:string = "Técnico em Mecânica"
+  const curso:string = "Técnico em Mecânica";
 
   const perfil:Perfil[] = [
-    { id: 1, emoji: "😄", nome: "Ana", cargo: "RH", idade: 35 },
-    { id: 2, emoji: "👨‍💻", nome: "Carlos", cargo: "Desenvolvedor", idade: 28  },
-    { id: 3, emoji: "🎨", nome: "Julia", cargo: "Designer", idade: 52  }
-  ]
+    { id: 1, emoji: "😄", nome: "Ana", cargo: "RH", idade: 35, vip: true, ativo: true },
+    { id: 2, emoji: "👨‍💻", nome: "Carlos", cargo: "Desenvolvedor", idade: 28, vip: false, ativo:true },
+    { id: 3, emoji: "🎨", nome: "Julia", cargo: "Designer", idade: 52, vip: true, ativo: false  },
+    { id: 4, emoji: "📊", nome: "Marcos", cargo: "Analista de Dados", idade: 31, vip: false, ativo: true },
+    { id: 5, emoji: "🧑‍🏫", nome: "Fernanda", cargo: "Gerente de Projetos", idade: 44, vip: true, ativo: true },
+    { id: 6, emoji: "🔧", nome: "Roberto", cargo: "DevOps", idade: 26, vip: false, ativo: false }
+  ];
+
+  const produtos:Produtos[] = [
+    { id: 1, nome: "Notebook", preco: 4500.00 },
+    { id: 2, nome: "Mouse Gamer", preco: 159.90 },
+    { id: 3, nome: "Teclado Mecânico", preco: 329.90 },
+    { id: 4, nome: 'Monitor 24"', preco: 899.99 },
+    { id: 5, nome: "Headset", preco: 249.50 },
+    { id: 6, nome: "Webcam Full HD", preco: 189.90 }
+  ];
 
   return (
   <>
@@ -37,17 +60,32 @@ export default function Home() {
       <Saudacao nome = {perfil[0]?.nome ?? ""}/>
       <Ola />
 
+      <h2 className="text-blue-700">Status com ternário</h2>
       <Status status = {true}/>
 
       <Titulo />
+      
+      <h2 className="text-blue-700">Imagem</h2>
+      <div>
+        <img className="shadow-xl h-24 w-auto object-contain" src="OIP.jpg" alt="xx" />
+      </div>
 
-      <h2 className="text-blue-700">Card -map</h2>
-      <div className="flex gap-3">
+      <h2 className="text-blue-700">Literals</h2>
+      <div className=" flex justify-center items-center shadow-lg font-bold bg-emerald-100 w-xl p-3 rounded-xl text-emerald-950">
+        {`${nome2} - ${curso}`}
+      </div>
+
+      <h2 className="text-blue-700">Card com map e filter</h2>
+      <div className="flex gap-3 flex-wrap justify-center">
         {/* cards aqui */}
-        {perfil.map(p=> (
+        {perfil
+        .filter(p => p.ativo == true)
+        .map(p=> (
           <CartaoPerfil key={p.id} emoji={p.emoji} nome={p.nome} cargo={p.cargo}/>
         ))}
       </div>
+
+      {/* precos.filter(p => p > 100); */}
       
       <h2 className="text-blue-700">Contas</h2>
       <p className="text-emerald-950">2 + 2 = {2+2}</p>  {/* Dentro de {"{ }"} vai JavaScript, não texto. */}
@@ -66,24 +104,33 @@ export default function Home() {
         {perfil.map(p => <li key={p.id} className="text-emerald-600">{p.nome}</li>)}
       </ul>
       
-      <h2 className="text-blue-700">Cards Vip</h2>
-      <div className="flex gap-3">
-        {perfil.map(p => <Card key={p.id} nome={p.nome} />)}
-      </div>
-      
       <h2 className="text-blue-700">Lista ordenada com map e índice</h2>
       <ol>
         {perfil.map((n, i) => <li key={i} className="text-emerald-600">{i+1}. {n.nome}</li>)}
       </ol>
-      
-      <h2 className="text-blue-700">Imagem</h2>
-      <div>
-        <img className="shadow-xl h-24 w-auto object-contain" src="OIP.jpg" alt="xx" />
+
+      <h2 className="text-blue-700">Cards com condicional Vip</h2>
+      <div className="flex flex-wrap justify-center gap-3">
+        {perfil.map(p => <Card key={p.id} nome={p.nome} vip={p.vip}/>)}
       </div>
 
-      <h2 className="text-blue-700">Literals</h2>
-      <div className=" flex justify-center items-center shadow-lg font-bold bg-emerald-100 w-xl p-3 rounded-xl text-emerald-950">
-        {`${nome2} - ${curso}`}
+      <h2 className="text-blue-700">16.Lista de produtos com map</h2>
+      <div>
+        <ul className="text-emerald-600">
+          {produtos.map(p => <Produtos key={p.id} nome={p.nome} preco={p.preco}/>)}
+        </ul>
+      </div>
+
+      <h2 className="text-blue-700">17.Badge reutilizável</h2>
+      <div>
+        <Badge texto ="Lorem ipsum dolor sit amet consectetur adipisicing elit."/>
+        <Badge texto ="Officia fugit, ea harum odit maxime dicta dolorum consectetur pariatur voluptatibus."/>
+        <Badge texto ="Hic culpa aut quasi quisquam assumenda nulla natus nihil aspernatur? Velit."/>
+      </div>
+
+      <h2 className="text-blue-700">18.Lista Genérica</h2>
+      <div className="text-emerald-600">
+      <Lista itens={["Mouse", "Teclado", "Monitor"]} />
       </div>
     </main>    
     <Rodape />

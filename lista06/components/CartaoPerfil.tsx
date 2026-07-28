@@ -1,7 +1,8 @@
 type perfilProps ={
     emoji: string,
     nome: string,
-    cargo: string
+    cargo: string,
+    
 }
 
 export default function CartaoPerfil({emoji, nome, cargo}:perfilProps) {
@@ -13,3 +14,4 @@ export default function CartaoPerfil({emoji, nome, cargo}:perfilProps) {
         </div>
     )
 }
+

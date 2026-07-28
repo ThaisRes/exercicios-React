@@ -1,4 +1,4 @@
-type vipProps ={
+ export type vipProps ={
     vip:boolean
 }
 export default function Vip({vip}:vipProps){
