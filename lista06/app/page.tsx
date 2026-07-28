@@ -11,6 +11,8 @@ import Card from "@/components/Card";
 import Produtos from "@/components/Produtos";
 import Badge from "@/components/Badge";
 import Lista from "@/components/Lista";
+import Enunciado from "@/components/Enunciado";
+import Perfil from "@/components/Perfil";
 
 type Perfil = {
   id: number;
@@ -26,6 +28,11 @@ type Produtos = {
   id:number;
   nome:string;
   preco: number;
+}
+type Alunos = {
+  id:number;
+  nome:string;
+  nota: number;
 }
 
 export default function Home() {
@@ -51,86 +58,153 @@ export default function Home() {
     { id: 6, nome: "Webcam Full HD", preco: 189.90 }
   ];
 
+  const alunos:Alunos[]=[
+    {id: 1, nome: "Ana Silva", nota: 8.5},
+    {id: 2, nome: "Bruno Souza", nota: 7.2},
+    {id: 3, nome: "Carla Oliveira", nota: 9.0},
+    {id: 4, nome: "Diego Santos", nota: 6.8},
+    {id: 5, nome: "Elena Rodrigues", nota: 9.5},
+    {id: 6, nome: "Felipe Costa", nota: 5.5}
+];
+
   return (
   <>
     <Header />
-    <main className="flex flex-col gap-3 py-6 items-center bg-emerald-50 h-vw">     
+    <main className="flex flex-col gap-3 p-6 items-start bg-emerald-50 h-vw">     
 
-      {/* <h2 className="text-emerald-950">Olá, {nome}</h2> */}
-      <Saudacao nome = {perfil[0]?.nome ?? ""}/>
-      <Ola />
-
-      <h2 className="text-blue-700">Status com ternário</h2>
-      <Status status = {true}/>
-
-      <Titulo />
-      
-      <h2 className="text-blue-700">Imagem</h2>
       <div>
-        <img className="shadow-xl h-24 w-auto object-contain" src="OIP.jpg" alt="xx" />
+        <Enunciado>1. Primeira prop</Enunciado>
+        <Saudacao nome = {perfil[0]?.nome ?? ""}/>
       </div>
 
-      <h2 className="text-blue-700">Literals</h2>
-      <div className=" flex justify-center items-center shadow-lg font-bold bg-emerald-100 w-xl p-3 rounded-xl text-emerald-950">
-        {`${nome2} - ${curso}`}
-      </div>
-
-      <h2 className="text-blue-700">Card com map e filter</h2>
-      <div className="flex gap-3 flex-wrap justify-center">
-        {/* cards aqui */}
-        {perfil
-        .filter(p => p.ativo == true)
-        .map(p=> (
-          <CartaoPerfil key={p.id} emoji={p.emoji} nome={p.nome} cargo={p.cargo}/>
-        ))}
-      </div>
-
-      {/* precos.filter(p => p > 100); */}
-      
-      <h2 className="text-blue-700">Contas</h2>
-      <p className="text-emerald-950">2 + 2 = {2+2}</p>  {/* Dentro de {"{ }"} vai JavaScript, não texto. */}
-      <p className="text-emerald-950">8 + 1 = {8+1}</p>
-      {/* <p className="text-emerald-950">{`${nome} tem ${idade} anos.`}</p> */}
-
-      <Idade nome={perfil[1].nome} idade={perfil[1].idade} />
-      
-      <h2 className="text-blue-700">Caixa</h2>
-      <Caixa>
-        <h3>Sou o conteúdo!</h3>
-      </Caixa>
-
-      <h2 className="text-blue-700">Lista não ordenada com map</h2>
-      <ul>
-        {perfil.map(p => <li key={p.id} className="text-emerald-600">{p.nome}</li>)}
-      </ul>
-      
-      <h2 className="text-blue-700">Lista ordenada com map e índice</h2>
-      <ol>
-        {perfil.map((n, i) => <li key={i} className="text-emerald-600">{i+1}. {n.nome}</li>)}
-      </ol>
-
-      <h2 className="text-blue-700">Cards com condicional Vip</h2>
-      <div className="flex flex-wrap justify-center gap-3">
-        {perfil.map(p => <Card key={p.id} nome={p.nome} vip={p.vip}/>)}
-      </div>
-
-      <h2 className="text-blue-700">16.Lista de produtos com map</h2>
       <div>
+        <Enunciado>02. Prop num parágrafo</Enunciado>
+        <Perfil cargo="DEV" />
+      </div>
+
+        <div>
+          <Enunciado>03. Duas props</Enunciado>
+          <Enunciado>04. Desestruturar props</Enunciado>
+          <Enunciado>15. filter + map</Enunciado>
+                <div className="flex gap-3 flex-wrap justify-center">
+          {/* cards aqui */}
+          {perfil
+          .filter(p => p.ativo == true)
+          .map(p=> (
+            <CartaoPerfil key={p.id} emoji={p.emoji} nome={p.nome} cargo={p.cargo}/>
+          ))}
+                </div>
+        </div>
+
+      <div>
+        <Enunciado>05. Prop numérica</Enunciado>
+        <Idade nome={perfil[1].nome} idade={perfil[1].idade} />
+      </div>
+
+      <div>
+        <Enunciado>06. Prop boolean</Enunciado>
+        <Enunciado>14. Ternário no JSX</Enunciado>
+        <Status status = {true}/>
+      </div>
+
+      <div>
+        <Enunciado>07. props.children</Enunciado>
+        <Caixa>
+          <h3>Sou o conteúdo!</h3>
+        </Caixa>
+      </div> 
+      
+      <div>
+        <Enunciado>08. Valor padrão</Enunciado>
+        {/* <h2 className="text-emerald-950">Olá, {nome}</h2> */}
+        <Ola />
+      </div>
+
+      <div>
+        <Enunciado>09. Lista não ordenada com .map</Enunciado>
+        <ul>
+          {perfil.map(p => <li key={p.id} className="text-emerald-600">{p.nome}</li>)}
+        </ul>
+      </div>
+
+      <div>
+        <Enunciado>10. Array de objetos em cards</Enunciado>
+        <Enunciado>11. A key correta</Enunciado>
+        <Enunciado>13. Condicional com &&</Enunciado>
+        <Enunciado>19.Grade de Cards</Enunciado>
+        <div className="flex flex-wrap justify-center gap-3">
+          {perfil.map(p => <Card key={p.id} nome={p.nome} vip={p.vip}/>)}
+        </div>
+      </div>
+
+      <div>
+        <Enunciado>12. Lista ordenada com .map e índice</Enunciado>
+        <ol>
+          {perfil.map((n, i) => <li key={i} className="text-emerald-600">{i+1}. {n.nome}</li>)}
+        </ol>
+      </div>
+      
+      <div>
+        <Enunciado>16.Lista de produtos com map</Enunciado>
         <ul className="text-emerald-600">
           {produtos.map(p => <Produtos key={p.id} nome={p.nome} preco={p.preco}/>)}
         </ul>
       </div>
 
-      <h2 className="text-blue-700">17.Badge reutilizável</h2>
       <div>
+        <Enunciado>17.Badge reutilizável</Enunciado>
         <Badge texto ="Lorem ipsum dolor sit amet consectetur adipisicing elit."/>
         <Badge texto ="Officia fugit, ea harum odit maxime dicta dolorum consectetur pariatur voluptatibus."/>
         <Badge texto ="Hic culpa aut quasi quisquam assumenda nulla natus nihil aspernatur? Velit."/>
       </div>
 
-      <h2 className="text-blue-700">18.Lista Genérica</h2>
-      <div className="text-emerald-600">
-      <Lista itens={["Mouse", "Teclado", "Monitor"]} />
+      <div>
+        <Enunciado>18.Lista Genérica</Enunciado>
+        <div className="text-emerald-600">
+          <Lista itens={["Mouse", "Teclado", "Monitor"]} />
+        </div>
+      </div>
+
+      <div>
+        <Enunciado>20.Tabela via .map</Enunciado>
+          <table className="w-full border-collapse overflow-hidden text-emerald-900">
+            <thead>
+              <tr className="border-b">
+                <th className="border-r last:border-r-0 px-3 py-1 text-left">Nome</th>
+                <th className="px-3 py-1 text-left">Nota</th>
+              </tr>
+            </thead>
+            <tbody>
+              {alunos.map(a =>
+              <tr key={a.id} className="border-b last:border-b-0"> 
+                <td className="border-r px-3 py-1">{a.nome}</td>
+                <td className="px-3 py-1">{a.nota}</td>
+              </tr>
+              )}
+            </tbody>
+          </table>
+      </div>
+
+      <Enunciado>*Exercícios da lista anterior</Enunciado>
+      <Titulo />
+      
+      <div>
+        <Enunciado>Imagem</Enunciado>
+        <img className="shadow-xl h-24 w-auto object-contain" src="OIP.jpg" alt="xx" />
+      </div>
+
+      <Enunciado>Literals</Enunciado>
+      <div className=" flex justify-center items-center shadow-lg font-bold bg-emerald-100 w-xl p-3 rounded-xl text-emerald-950">
+        {`${nome2} - ${curso}`}
+      </div>
+
+      {/* precos.filter(p => p > 100); */}
+      
+      <div>
+        <Enunciado>Contas</Enunciado>
+        <p className="text-emerald-950">2 + 2 = {2+2}</p>  {/* Dentro de {"{ }"} vai JavaScript, não texto. */}
+        <p className="text-emerald-950">8 + 1 = {8+1}</p>
+        {/* <p className="text-emerald-950">{`${nome} tem ${idade} anos.`}</p> */}
       </div>
     </main>    
     <Rodape />
