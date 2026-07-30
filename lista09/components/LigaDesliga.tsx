@@ -7,7 +7,7 @@ export default function LigaDesliga(){
     return(
         <div>
             <button onClick={(()=>setLigado(!ligado))}>
-                {ligado ? <p>on</p> : <p>off</p>}
+                {ligado ? <p>on 🟢</p> : <p>off ⚪</p>}
             </button>
         </div>
     )
