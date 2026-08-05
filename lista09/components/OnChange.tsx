@@ -12,7 +12,7 @@ export default function Onchange(){
     }
 
     return (
-        <div className="flex flex-col gap-3" >
+        <div className="flex flex-col gap-3 border rounded p-3 w-110 shadow-md " >
             <div className="flex flex-col gap-1">
                 <label>Input - nome</label>
                 <input className="rounded w-100 border h-10" type="text" name="nome" value={form.nome} 

@@ -8,13 +8,13 @@ export default function InputControlado(){
   }
 
   return(
-    <div>
+    <div className="border rounded p-3 w-110 shadow-md ">
       <label >Input Controlado</label>
-      <input className="border" type="text" name={inputcontrol} onChange={handler} />
+      <input className="border" type="text" value={inputcontrol} onChange={handler} />
       <p> {inputcontrol} </p>
-      <h2>Contar Caracteres</h2>
+      <h2>Contagem de Caracteres</h2>
       <p>{inputcontrol.length}</p>
-      <button className="bg-blue-400 rounded p-3" onClick={()=>setInputControl("")}>Resetar</button>
+      <button className="bg-blue-400 rounded p-3 font-bold" onClick={()=>setInputControl("")}>Resetar</button>
     </div>
   )
 }
