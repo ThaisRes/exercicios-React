@@ -1,4 +1,4 @@
-import InputControlado from "@/components/InputControlado";
+import InputControlado from "./components/InputControlado";
 
 export default function Home() {
   return (

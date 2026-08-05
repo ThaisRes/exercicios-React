@@ -1,20 +1,20 @@
-import Titulo from "../components/Titulo"; //ou use @ para sair da raiz do projeto: @/components/Titulo
-import Rodape from "../components/Footer";
-import CartaoPerfil from "@/components/CartaoPerfil";
-import Header from "@/components/Header";
-import Saudacao from "@/components/Saudacao";
-import Idade from "@/components/Idade";
-import Status from "@/components/Status";
-import Caixa from "@/components/Caixa";
-import Ola from "@/components/Ola";
-import Card from "@/components/Card";
-import Produtos from "@/components/Produtos";
-import Badge from "@/components/Badge";
-import Lista from "@/components/Lista";
-import Enunciado from "@/components/Enunciado";
-import Perfil from "@/components/Perfil";
-import CardAluno from "@/components/CardAluno";
-import AlunoNome from "@/components/AlunoNome";
+import Titulo from "./components/Titulo"; //ou use @ para sair da raiz do projeto: @/components/Titulo
+import Rodape from "./components/Footer";
+import CartaoPerfil from "./components/CartaoPerfil";
+import Header from "./components/Header";
+import Saudacao from "./components/Saudacao";
+import Idade from "./components/Idade";
+import Status from "./components/Status";
+import Caixa from "./components/Caixa";
+import Ola from "./components/Ola";
+import Card from "./components/Card";
+import Produtos from "./components/Produtos";
+import Badge from "./components/Badge";
+import Lista from "./components/Lista";
+import Enunciado from "./components/Enunciado";
+import Perfil from "./components/Perfil";
+import CardAluno from "./components/CardAluno";
+import AlunoNome from "./components/AlunoNome";
 
 type Perfil = {
   id: number;
@@ -76,8 +76,7 @@ export default function Home() {
   <>
     <Header />
     <main className="flex flex-col gap-3 p-6 items-start bg-emerald-50 h-vw">   
-
-        <Enunciado>*Exercícios da lista 09</Enunciado>
+      <Enunciado>*Exercícios da lista 09</Enunciado>
       <div>
         <Enunciado>01. Tipar uma prop string</Enunciado>
         <Enunciado>02. Duas props tipadas</Enunciado>
