@@ -6,6 +6,7 @@ import InputControlado from "@/components/InputControlado";
 import LigaDesliga from "@/components/LigaDesliga";
 import MostrarEsconder from "@/components/MostrarEsconder";
 import Onchange from "@/components/OnChange";
+import Presenca from "@/components/Presenca";
 import TrocaCor from "@/components/TrocaCor";
 import { useState } from "react";
 
@@ -22,6 +23,7 @@ export default function Home() {
       <TrocaCor />
       <InputControlado />
       <Onchange />
+      <Presenca />
 
     </div>
   )
