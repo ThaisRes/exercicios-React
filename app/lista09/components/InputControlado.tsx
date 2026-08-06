@@ -8,7 +8,7 @@ export default function InputControlado(){
   }
 
   return(
-    <div className="border rounded p-3 w-110 shadow-md ">
+    <div>
       <label >Input Controlado</label>
       <input className="border" type="text" value={inputcontrol} onChange={handler} />
       <p> {inputcontrol} </p>

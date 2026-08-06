@@ -1,16 +1,21 @@
-import Image from "next/image";
+import Card from "./components/Card";
+import MAIN from "./components/MAIN";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full flex-col ">
-        <a href="/listas">listas 1, 2 e 3</a> 
-        {/* aqui vai também o formulario e o currículo componentizados*/}
-        <a href="/lista09">lista 4</a>
-        <a href="/lista10">lista 5</a>
-        <a href="/form-api">form-api</a>
-        <a href="/lista11">lista 6</a>
-      </main>
-    </div>
+    <MAIN>
+        <Card>  
+          <div className="flex w-full gap-2">
+            <Card> <a href="/listas"> Listas 1, 2 e 3 </a> </Card>
+            <Card> <a href="/listas/turma"> Turma </a> </Card>   
+          </div>                
+        </Card>
+        <Card> <a href="/lista09"> Lista 4 </a>  </Card>
+        <Card> <a href="/lista10"> Lista 5 </a> </Card>
+        <Card> <a href="/form-api"> Form-API </a> </Card>
+        <Card> <a href="/lista11"> Lista 6 </a> </Card>
+        <Card> aqui vão também o formulario e o currículo componentizados </Card>     
+        
+    </MAIN>
   );
 }

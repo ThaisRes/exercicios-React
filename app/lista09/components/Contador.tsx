@@ -34,7 +34,7 @@ export default function Contador(){
     // }
 
     return(
-        <div className="flex flex-col gap-2 text-center border rounded p-3 w-110 shadow-md ">
+        <div className="flex flex-col gap-2">
             <h1 className="border rounded-sm w-30"> {numeroContador} </h1>
             <div className="flex gap-1">
                 <button onClick={lancaMais} className=" border rounded-sm bg-emerald-700 w-8">+</button>

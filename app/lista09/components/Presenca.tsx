@@ -3,7 +3,7 @@ import { useState } from "react";
 export default function Presenca() {
   const [presente, setPresente] = useState(false);
   return (
-    <div className="flex gap-2 border rounded p-3 w-110 shadow-md">
+    <div >
       {/*{presente ? <p>🟢 presente</p> : <p>⚪ ausente</p>}
       <button></button> */}
       <h2>Ana Carolina</h2>

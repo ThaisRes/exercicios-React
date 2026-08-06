@@ -19,7 +19,7 @@ export default function Matricula(){
         setNome("");
     }
     return(
-        <div className="flex flex-col gap-2 text-center items-center border rounded p-3 w-110 shadow-md">
+        <div >
             <form onSubmit={handler} className="flex flex-col gap-2 items-center">
                 <label htmlFor="matricula" className="flex flex-col">
                     <b>Matrícula</b> 

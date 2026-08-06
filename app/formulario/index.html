@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Formulário</title>
+</head>
+<body>
+    <main>
+        <form action="">
+            <fieldset>
+                <legend>Dados Pessoais</legend>
+                <label>Nome:</label>
+                <input type="text" placeholder="Seu nome completo">
+                
+                <label>Endereço:</label>
+                <input type="text" placeholder="Rua, número">
+                
+                <label>Cidade:</label>
+                <input type="text" placeholder="Sua cidade">
+                
+
+                <label>Estado:</label>
+                <select name="Estado" id="">
+                    <option value="">Rio de Janeiro</option>
+                    <option value="">São Paulo</option>
+                    <option value="">Minas Gerais</option>
+                    <option value="">Rio Grande do Sul</option>
+                    <option value="">Pernanbuco</option>
+                    <option value="">Ceará</option>
+                </select>
+                
+            </fieldset>
+        
+            <fieldset>
+                <legend>Dados Profissionais</legend>
+                <label>Natureza do Cargo: </label>
+                <select name="Natureza do Cargo" id="">
+                    <option value="">Gerência</option>
+                    <option value="">Financeiro</option>
+                    <option value="">Recepção</option>
+                    <option value="">Administrativo</option>
+                    <option value="">Jurídico</option>
+                </select>                
+                
+                <label for="interesse" class="label-checkbox">
+                    Área de interesse: 
+                </label>
+
+                <label for="computacao" class="label-checkbox">
+                    <input value="" type="checkbox" id="computacao">
+                    Computação
+                </label>
+
+                <label for="biologia" class="label-checkbox">
+                    <input value="" type="checkbox" id="biologia">
+                    Biologia
+                </label>
+
+                <label for="ambiente" class="label-checkbox">
+                    <input value="" type="checkbox" id="ambiente">
+                    Meio Ambiente
+                </label>
+
+                <label for="engenharia" class="label-checkbox">
+                    <input value="" type="checkbox" id="engenharia">
+                    Engenharia
+                </label>
+
+                <label for="historia" class="label-checkbox">
+                    <input value="" type="checkbox" id="historia">
+                    História
+                </label>
+                             
+                <label for="curriculo">Mini Currículo:</label>
+                <textarea name="" id="curriculo" rows="4" cols="40" placeholder="Fale um pouco sobre você..."></textarea>
+
+            </fieldset>
+            <section class="buttons-section">
+                <button id="enviar">Enviar</button>
+                <button id="limpar">Limpar</button>
+            </section>
+        </form>       
+
+    </main>    
+</body>
+</html>
+

@@ -1,5 +1,7 @@
 'use client'   //encapsulameto, abstração
 
+import Card from "../components/Card";
+import MAIN from "../components/MAIN";
 import AdicionarTurma from "./components/AdicionarTurma";
 import Botao from "./components/Botao";
 import Contador from "./components/Contador";
@@ -11,6 +13,7 @@ import LigaDesliga from "./components/LigaDesliga";
 import Matricula from "./components/Matricula";
 import MostrarEsconder from "./components/MostrarEsconder";
 import Onchange from "./components/OnChange";
+import Painel from "./components/Painel";
 import Presenca from "./components/Presenca";
 import PresencaInterativa from "./components/PresencaInterativa";
 import SoPresentes from "./components/SoPresentes";
@@ -23,23 +26,23 @@ export default function Home() {
 
   
   return(
-    <div className=" flex flex-col gap-5 m-5">
-      <Botao>Clique aqui</Botao>
-      <Contador />
-      <LigaDesliga />
-      <MostrarEsconder />
-      <TrocaCor />
-      <InputControlado />
-      <Onchange />
-      <Presenca />
-      <Curtidas />
-      <AdicionarTurma />
-      <ContarPresentes />
-      <Contadores />
-      <SoPresentes />
-      <PresencaInterativa />
-      <Matricula />
-
-    </div>
+    <MAIN>
+      <Card> <Botao>Clique aqui</Botao> </Card>
+      <Card> <Contador /> </Card>
+      <Card> <LigaDesliga /> </Card>
+      <Card> <MostrarEsconder /> </Card>
+      <Card> <TrocaCor /> </Card>
+      <Card> <InputControlado /> </Card>
+      <Card> <Onchange /> </Card>
+      <Card> <Presenca /> </Card>
+      <Card> <Curtidas /> </Card>
+      <Card> <AdicionarTurma /> </Card>
+      <Card> <ContarPresentes /> </Card>
+      <Card> <Contadores /> </Card>
+      <Card> <SoPresentes /> </Card>
+      <Card> <PresencaInterativa /> </Card>
+      <Card> <Matricula /> </Card>    
+      <Card> <Painel /> </Card>
+    </MAIN>
   )
 }

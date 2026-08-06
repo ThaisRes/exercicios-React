@@ -9,17 +9,20 @@ export default function PresencaInterativa(){
     );
 
     return(
-        <div className="flex flex-col gap-2 text-center items-center border rounded p-3 w-110 shadow-md">
+        <div >
             <h2><b>Presentes: {estudante.filter(e => e.presente).length}</b></h2>
-            {estudante.map(e => (
-                <button 
-                    key={e.id} 
-                    onClick={()=>alternar(e.id)}
-                    className="border rounded p-1 w-40"
-                >
-                    {e.presente ? "🟢" : "⚪"} {e.nome}
-                </button>
-            ))}
+            <div className="flex flex-wrap gap-3">
+                {estudante.map(e => (
+                    <button 
+                        key={e.id} 
+                        onClick={()=>alternar(e.id)}
+                        className="border rounded p-1 w-40"
+                    >
+                        {e.presente ? "🟢" : "⚪"} {e.nome}
+                    </button>
+                ))}
+            </div>
+            
         </div>
     )
 }

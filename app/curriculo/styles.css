@@ -1,0 +1,72 @@
+ @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+
+ body {
+    background-color: rgb(36, 37, 39);
+    color: aliceblue;
+    font-family: "Inconsolata", monospace;
+    font-weight: 400;
+    font-style: normal;
+    margin-left: 2rem;
+    padding: 0;
+ }
+
+ a {
+    text-decoration: none;
+    color:rgb(255, 166, 107)
+ }
+
+ strong {
+    color: rgb(255, 215, 188);
+ }
+
+ .main-nav {
+    display: flex; 
+    gap: 2rem;
+    list-style: none;
+    padding: 0;
+ }
+
+ .info {
+    display: flex; 
+    gap: 2rem; 
+    padding-bottom: 0.625rem;
+ }
+
+ .experiencias-profissionais {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+ }
+
+ .experiencias-profissionais h4 {
+    margin-bottom: 5px;
+ }
+
+ .experiencias-profissionais p {
+    margin-top: 0;
+ }
+
+ .margin-list li{
+    margin-bottom: 0.5rem;
+ }
+
+ footer {
+    text-align: center;
+ }
+
+ .a-button {
+    background-color: rgb(255, 166, 107);
+    border-radius: 8px;
+    padding: 8px 16px;
+    color: rgb(36, 37, 39);
+    font-weight: 600;
+    font-size: small;
+ }
+
+ .a-button:hover {
+    background-color: rgb(255, 140, 63);
+ }
+
+ .footer-info {
+    font-size: small;
+ }

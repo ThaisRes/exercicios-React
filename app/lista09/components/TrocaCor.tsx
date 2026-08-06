@@ -7,7 +7,7 @@ export default function TrocaCor(){
     const [cor, setCor] = useState(false)
 
     return(
-        <div className="flex gap-2 border rounded p-3 w-110 shadow-md " >
+        <div className="flex flex-wrap gap-3" >
             <button onClick={()=>setCor(!cor)} className="bg-blue-400 shadow-md font-semibold rounded text-blue-950 p-3" >
                 Trocar Cor
             </button>

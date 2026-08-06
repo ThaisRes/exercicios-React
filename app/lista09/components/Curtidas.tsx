@@ -3,7 +3,7 @@ import { useState } from "react"
 export default function (){
     const[curtidas, setCurtidas]=useState<number>(0);
     return(
-        <div className="flex flex-col gap-2 text-center border rounded p-3 w-110 shadow-md">
+        <div>
             <h2>Daniel Guimarães</h2>
             {/* <span>Curtidas </span> */}
             <div>

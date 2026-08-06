@@ -9,8 +9,8 @@ export default function Botao({children}:BotaoProps){
   // }
 
     return(
-        <div className="text-center border rounded shadow-md  p-3 w-110">
-            <button onClick={()=>{alert("Olá, turma!")}} className="bg-blue-400 rounded p-3 font-bold shadow-md ">
+        <div>
+            <button onClick={()=>{alert("Olá, turma!")}} className="bg-amber-600 rounded p-3 font-bold shadow-md ">
                 {children}
             </button>
         </div>

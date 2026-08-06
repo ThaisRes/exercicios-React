@@ -6,7 +6,7 @@ export default function SoPresentes(){
         const[soPresentes, setSoPresentes] = useState<boolean>(false);
 
     return (
-        <div className="flex flex-col gap-2 text-center items-center border rounded p-3 w-110 shadow-md">
+        <div >
             <button onClick={()=> setSoPresentes(!soPresentes)} className="border rounded p-1 w-30">
                 só presentes
             </button>
