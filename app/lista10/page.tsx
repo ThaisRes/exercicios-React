@@ -4,6 +4,8 @@ import DoisInputs from "./components/DoisInputs";
 import InputControlado from "./components/InputControlado";
 import MostrarAoEnviar from "./components/MostrarAoEnviar";
 import ObjetoNoEstado from "./components/ObjetoNoEstado";
+import Observacao from "./components/Observacao";
+import Turma from "./components/Turma";
 
 export default function Home() {
   return (
@@ -12,6 +14,8 @@ export default function Home() {
       <Card><DoisInputs/></Card>
       <Card> <ObjetoNoEstado /> </Card>
       <Card> <MostrarAoEnviar /> </Card>
+      <Card> <Turma /> </Card>
+      <Card> <Observacao /> </Card>
     </MAIN>
   );
 }
