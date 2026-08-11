@@ -1,20 +1,30 @@
 'use client'
 import { useState } from "react";
 
-export default function(){
-    const[poema, setPoema] = useState<string>("");
+export default function MostrarAoEnviar(){
+    const[nome, setNome] = useState<string>("");
+    const[matriculado, setMatriculado] = useState<string>("");
+
+    function enviar(e: React.SubmitEvent) {
+        e.preventDefault();
+        if (nome.trim() === "") { alert("Preencha o nome!"); return; }
+        setMatriculado(nome);
+        alert("Matriculado: " + nome);
+    }
 
     return(
         <div className="flex flex-col gap-2 w-full">
-            <form onSubmit={(e:React.SubmitEvent)=>{e.preventDefault; setPoema(poema)}} className="flex flex-col gap-2">
-                <input type="text" name="poema" value={poema} 
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPoema({ e.target.value })}
-                placeholder="Digite um poema" className="border rounded p-1"/>
-                <button type="submit"  className="border rounded p-1">Enviar</button>
+            {/* onSubmit={(e:React.SubmitEvent)=>{e.preventDefault(); setMatriculado(nome)}} */}
+            <form onSubmit={enviar} className="flex flex-col gap-2">
+                <input type="text" name="nome" value={nome} 
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setNome(e.target.value)}
+                placeholder="Digite o nome do aluno(a)" className="border rounded p-1"/>
+                <button type="submit"  className="border rounded p-1">Matricular</button>
+                
+                {matriculado && <p>Aluno(a) matriculado: {matriculado}</p>}
             </form>
-            {<p>{poema}</p>}
         </div>
     )
 }
  
-   
+
