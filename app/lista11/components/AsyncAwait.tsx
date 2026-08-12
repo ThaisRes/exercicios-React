@@ -19,8 +19,8 @@ export default function AsyncAwait(){
     if (carregando) return <p>Carregando…</p>;
     return(
         <div>
-            <h2>Async/Await</h2>
-            <p>Total: {turma.length}</p>
+            <h2 className="font-bold text-lg">Async/Await</h2>
+            <p className="font-semibold">Total: {turma.length}</p>
             <ul>
                 {turma.map((aluno)=><li key={aluno.id}>✎ {aluno.nome} 🛠 {aluno.curso}</li>)}
             </ul>
