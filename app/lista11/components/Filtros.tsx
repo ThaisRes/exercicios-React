@@ -1,0 +1,59 @@
+'use client'
+import { AlunoFetch } from "@/app/lista10/types/alunoFetch"
+import { useEffect, useState } from "react"
+
+export default function Filtros(){
+    const [turma, setTurma] = useState<AlunoFetch[]>([]);
+    const [carregando, setCarregando] = useState<boolean>(true);
+    const [erro, setErro] =useState<string | null>(null);
+
+    async function listar(){
+        try {
+            setCarregando(true);
+            setErro(null);
+            const res =await fetch("https://prof.giango.com.br/api/turma");
+            if (!res.ok) throw new Error("Falhou: " + res.status);
+            setTurma(await res.json());
+            setCarregando(false);                
+        } catch (error) {
+            setErro("Falha ao carregar")
+    }}
+
+    useEffect(()=> {
+          listar();
+        }, []);
+
+    if (carregando) return <p>Carregando...</p>
+     
+    return(
+        <div className="flex flex-col gap-3 w-full">
+            {erro && <p className="text-red-700"> {erro} </p>}
+
+        {/* Filtro Front-End */}   
+            <h2 className="font-bold">Filter: Front-End</h2>
+            <div className="flex flex-wrap gap-2 w-full">
+                {turma
+                .filter((aluno) => aluno.curso.toLowerCase() === "front-end")
+                .map((aluno) => 
+                    <div key={aluno.id} className="bg-white rounded-2xl p-4 shadow-lg">
+                        <p className="font-semibold">{aluno.nome}</p>
+                        <small>{aluno.curso}</small>
+                    </div>
+                )}
+            </div>
+
+        {/* Filtro Presentes */}
+            <h2 className="font-bold">Filter: Presente</h2>
+            <p>Presentes: {turma.filter((aluno)=>aluno.presente).length}</p>
+            <div className="flex flex-wrap gap-2 w-full">
+                {turma
+                .filter((aluno)=>aluno.presente === true)
+                .map((aluno)=>
+                    <div key={aluno.id} className="bg-white rounded-2xl p-4 shadow-lg">
+                        <p className="font-semibold">{aluno.nome}</p>
+                    </div>
+                )}
+            </div>
+        </div>
+    )
+}

@@ -27,9 +27,7 @@ export default function CardFetch(){
      
     return(
         <div className="flex flex-col gap-3 w-full">
-            <button onClick={listar} 
-            className="bg-sky-300 hover:bg-sky-400 active:scale-105 transition-transform duration-150 rounded p-2 font-medium disabled:opacity-50 disabled:pointer-events-none">
-                Recarregar</button>
+
             {erro && <p className="text-red-700"> {erro} </p>}
         
         {/* Todos os Alunos  +  carregando*/}
@@ -43,32 +41,11 @@ export default function CardFetch(){
                     )} 
                 </div>
             }
-
-        {/* Filtro Front-End */}   
-            <h2 className="font-bold mt-8">Filter: Front-End</h2>
-            <div className="flex flex-wrap gap-2 w-full">
-                {turma
-                .filter((aluno) => aluno.curso.toLowerCase() === "front-end")
-                .map((aluno) => 
-                    <div key={aluno.id} className="bg-white rounded-2xl p-4 shadow-lg">
-                        <p className="font-semibold">{aluno.nome}</p>
-                        <small>{aluno.curso}</small>
-                    </div>
-                )}
-            </div>
-
-        {/* Filtro Presentes */}
-            <h2 className="font-bold mt-8">Filter: Presente</h2>
-            <p>Presentes: {turma.filter((aluno)=>aluno.presente).length}</p>
-            <div className="flex flex-wrap gap-2 w-full">
-                {turma
-                .filter((aluno)=>aluno.presente === true)
-                .map((aluno)=>
-                    <div key={aluno.id} className="bg-white rounded-2xl p-4 shadow-lg">
-                        <p className="font-semibold">{aluno.nome}</p>
-                    </div>
-                )}
-            </div>
+            <button onClick={listar} 
+                className="bg-sky-300 hover:bg-sky-400 active:scale-105 transition-transform duration-150 rounded p-2 font-medium disabled:opacity-50 disabled:pointer-events-none"
+            >
+                Recarregar
+            </button>
         </div>
     )
 }
