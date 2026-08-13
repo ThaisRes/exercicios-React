@@ -5,7 +5,7 @@ type AlunoProps = {
     presente?: boolean
 }
 
-export default function CardAluno({nome, curso, nota, presente}:AlunoProps){
+export default function CardAluno({nome, curso ="Front-end", nota, presente}:AlunoProps){
     return(
         <div className="flex flex-col bg-emerald-900 rounded p-4 shadow-lg text-emerald-50 text-center my-1">
             <b className="">{nome}</b>

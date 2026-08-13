@@ -35,7 +35,7 @@ type Alunos = {
   id:number;
   nome:string;
   nota: number;
-  curso: string;
+  curso?: string;
   presente: boolean;
   bolsista:boolean;
 }
@@ -65,23 +65,24 @@ export default function Home() {
 
   const alunos: Alunos[] = [
     {"id": 1, "nome": "Ana Silva", "nota": 8.5, "curso": "Ciência da Computação", "presente": true, "bolsista": false},
-    {"id": 2, "nome": "Bruno Souza", "nota": 7.2, "curso": "Ciência da Computação", "presente": false, "bolsista": true},
-    {"id": 3, "nome": "Carla Oliveira", "nota": 9.0, "curso": "Ciência da Computação", "presente": true, "bolsista": true},
-    {"id": 4, "nome": "Diego Santos", "nota": 6.8, "curso": "Ciência da Computação", "presente": false, "bolsista": false},
+    {"id": 2, "nome": "Bruno Souza", "nota": 7.2, "curso": "Engenharia de software", "presente": false, "bolsista": true},
+    {"id": 3, "nome": "Carla Oliveira", "nota": 9.0, "curso": "Engenharia de Dados", "presente": true, "bolsista": true},
+    {"id": 4, "nome": "Diego Santos", "nota": 6.8, "curso": "IA aplicada", "presente": false, "bolsista": false},
     {"id": 5, "nome": "Elena Rodrigues", "nota": 9.5, "curso": "Ciência da Computação", "presente": true, "bolsista": true},
-    {"id": 6, "nome": "Felipe Costa", "nota": 5.5, "curso": "Ciência da Computação", "presente": false, "bolsista": false}
+    {"id": 6, "nome": "Felipe Costa", "nota": 5.5, "presente": false, "bolsista": false}
   ];
 
   return (
   <>
     <Header />
     <main className="flex flex-col gap-3 p-6 items-start bg-emerald-50 h-vw">   
-      <Enunciado>*Exercícios da lista 09</Enunciado>
+      <Enunciado>*Exercícios da lista 09 (lista 3 React)</Enunciado>
       <div>
         <Enunciado>01. Tipar uma prop string</Enunciado>
         <Enunciado>02. Duas props tipadas</Enunciado>
         <Enunciado>03. Prop número</Enunciado>
         <Enunciado>04. Prop boolean</Enunciado>
+        <Enunciado>07. Opcional + valor padrão</Enunciado>
         <div className="flex flex-row gap-3 flex-wrap justify-center">
           {alunos.map((a)=> <CardAluno key={a.id} nome={a.nome} curso={a.curso} presente={a.presente} nota={(a.nota).toFixed(2)} />)}        
         </div>
@@ -95,7 +96,9 @@ export default function Home() {
         </div>
       </div>
 
-      <Enunciado>*Exercícios da lista 08</Enunciado>
+        
+
+      <Enunciado>*Exercícios da lista 08 (lista 2 React)</Enunciado>
 
       <div>
         <Enunciado>1. Primeira prop - lista 08</Enunciado>
@@ -210,7 +213,7 @@ export default function Home() {
           </table>
       </div>
 
-      <Enunciado>*Outros Exercícios da lista 07</Enunciado>
+      <Enunciado>*Outros Exercícios da lista 07 (lista 1 React)</Enunciado>
       <Titulo />
       
       <div>
