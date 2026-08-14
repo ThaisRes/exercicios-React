@@ -136,6 +136,7 @@ export default function Home() {
       </div>
 
       <div>
+        <Enunciado>08. children tipado - lista 09</Enunciado>
         <Enunciado>07. props.children - lista 08</Enunciado>
         <Caixa>
           <h3>Sou o conteúdo!</h3>

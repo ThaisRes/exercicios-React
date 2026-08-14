@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <MAIN>
         <Card>  
-          <div className="flex w-full gap-2">
+          <div className="flex flex-col w-full gap-2">
             <Card> <a href="/listas"> Listas de exercícios React 1, 2 e 3 </a> </Card>
             <Card> <a href="/listas/turma"> Turma </a> </Card>   
           </div>                
@@ -14,7 +14,8 @@ export default function Home() {
         <Card> <a href="/lista10"> Lista de exercícios React 5 </a> </Card>
         <Card> <a href="/form-api"> Form-API </a> </Card>
         <Card> <a href="/lista11"> Lista de exercícios React 6 </a> </Card>
-        <Card> aqui vão também o formulario e o currículo componentizados </Card>     
+        <Card> aqui vão também o formulario e o currículo componentizados </Card>
+        <Card> <a href="/calculadora"> Calculadora </a> </Card>    
         
     </MAIN>
   );

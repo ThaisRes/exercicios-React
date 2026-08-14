@@ -1,8 +1,10 @@
 
-export default function Home(){
-    return(
-        <main className="flex items-center ">
+import Calculadora from "./components/calculadora";
 
-        </main>
-    )
+export default function Home() {
+  return (
+    <main className="flex items-center justify-center h-screen bg-gray-200">
+      <Calculadora />
+    </main >
+  );
 }
