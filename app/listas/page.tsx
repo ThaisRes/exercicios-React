@@ -91,6 +91,8 @@ export default function Home() {
       <div>
         <Enunciado>05.  Tipo inline - nome</Enunciado>
         <Enunciado>06.  Prop opcional - bolsista</Enunciado>
+        <Enunciado>09.  Um type de objeto</Enunciado>
+        <Enunciado>10.  Array tipado</Enunciado>
         <div className="flex flex-row gap-3 flex-wrap justify-center">
           {alunos.map(a => <AlunoNome key={a.id} nome={a.nome} bolsista={a.bolsista} />)}
         </div>

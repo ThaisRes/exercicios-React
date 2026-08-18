@@ -10,11 +10,12 @@ export default function Home() {
             <Card> <a href="/listas/turma"> Turma </a> </Card>   
           </div>                
         </Card>
+        <Card> aqui vão também o formulario e o currículo componentizados </Card>
         <Card> <a href="/lista09"> Lista de exercícios React 4 </a>  </Card>
         <Card> <a href="/lista10"> Lista de exercícios React 5 </a> </Card>
         <Card> <a href="/form-api"> Form-API </a> </Card>
         <Card> <a href="/lista11"> Lista de exercícios React 6 </a> </Card>
-        <Card> aqui vão também o formulario e o currículo componentizados </Card>
+        <Card> <a href="/lista12"> Lista de exercícios React 7 </a> </Card>
         <Card> <a href="/calculadora"> Calculadora </a> </Card>    
         
     </MAIN>

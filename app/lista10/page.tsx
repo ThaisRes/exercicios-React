@@ -13,8 +13,8 @@ import Turma from "./components/Turma";
 export default function Home() {
   return (
     <MAIN>
-      <Card><InputControlado /></Card>
-      <Card><DoisInputs/></Card>
+      <Card> <InputControlado /> </Card>
+      <Card> <DoisInputs/> </Card>
       <Card> <ObjetoNoEstado /> </Card>
       <Card> <MostrarAoEnviar /> </Card>
       <Card> <Turma /> </Card>
